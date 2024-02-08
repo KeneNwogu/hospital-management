@@ -117,7 +117,7 @@ Before you begin, ensure you have the following installed:
 ```
 
 ## Authentication
-Simple jwt authentication was added to the project. To access the graphql api, you need to obtain a token by using the login mutation. Here is an example of how to obtain a token:
+Simple jwt authentication was added to the project. To access the protected parts of the graphql api, you need to obtain a token by using the login mutation. Here is an example of how to obtain a token:
 
 ```graphql
 mutation {
