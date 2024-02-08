@@ -140,7 +140,7 @@ Here is an example of how to use the mutation to create a new hospital:
 
 ```graphql
 createHospital(
-    input: {name: "Newest Hospital", email: "kcee@dev.com", address: "Moluwe", phoneNumber: "08052218036", capacity: 1000, website: "kcee.com"}
+    input: {name: "Newest Hospital", email: "kcee@dev.com", address: "Moluwe", phoneNumber: "08000000000", capacity: 1000, website: "kcee.com"}
   ) {
     hospital {
       id
