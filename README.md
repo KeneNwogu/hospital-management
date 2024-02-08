@@ -60,6 +60,7 @@ Before you begin, ensure you have the following installed:
    DB_PASSWORD=your_database_password
    DB_HOST=localhost
    DB_PORT=5432
+   SECRET_KEY=testsecretkey
    ``
 
 5. **Run Migrations:**
@@ -113,4 +114,39 @@ Before you begin, ensure you have the following installed:
               phoneNumber
             }
         }
+```
+
+## Authentication
+Simple jwt authentication was added to the project. To access the graphql api, you need to obtain a token by using the login mutation. Here is an example of how to obtain a token:
+
+```graphql
+mutation {
+    login(username: "your_username", password: "your_password") {
+        token
+    }
+}
+  ```
+Replace `your_username` and `your_password` with your superuser credentials. The token will be returned in the response. 
+You can then use this token to authenticate your requests by adding it to the Authorization header in the format `Bearer <token>`.
+    
+```graphql
+    {
+        "Authorization": "Bearer <token>"
+    }
+   ```
+
+The token can be used to access the protected mutation endpoint `createHospital`. 
+Here is an example of how to use the mutation to create a new hospital:
+
+```graphql
+createHospital(
+    input: {name: "Newest Hospital", email: "kcee@dev.com", address: "Moluwe", phoneNumber: "08052218036", capacity: 1000, website: "kcee.com"}
+  ) {
+    hospital {
+      id
+      phoneNumber
+      capacity
+      name
+    }
+  }
 ```
