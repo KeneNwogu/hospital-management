@@ -28,7 +28,7 @@ JWT_ENCRYPTION_METHOD = "HS256"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hospital-ms-3nzl.onrender.com', '127.0.0.1']
 
 # Application definition
 
