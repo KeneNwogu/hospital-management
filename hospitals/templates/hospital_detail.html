@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    {% if hospital %}
+    <h1 class="mb-4">Hospitals - <strong>{{ hospital.name }}</strong></h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Hospital Information</h5>
+            <p class="card-text"><strong>Name:</strong> {{ hospital.name }}</p>
+            <p class="card-text"><strong>Email:</strong> <a href="mailto:{{ hospital.email }}">{{ hospital.email }}</a></p>
+            <p class="card-text"><strong>Website:</strong> <a href="{{ hospital.website }}">{{ hospital.website }}</a></p>
+            <p class="card-text"><strong>Address:</strong> {{ hospital.address }}</p>
+            <p class="card-text"><strong>Phone:</strong> {{ hospital.phone }}</p>
+            <p class="card-text"><strong>Capacity:</strong> {{ hospital.capacity }}</p>
+        </div>
+    </div>
+    {% else %}
+    <h1>Hospital not found</h1>
+    {% endif %}
+</div>
+{% endblock %}
